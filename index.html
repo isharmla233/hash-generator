@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SHA-512 哈希生成器｜dxxblog.cn</title>
+</head>
+<body>
+    <h1>SHA-512 哈希生成器</h1>
+    <br>
+    <label for="inputText">输入文本：</label>
+    <input type="text" id="inputText">
+    <br><br>
+    <button onclick="generateSHA512()">生成 SHA-512 哈希值</button>
+    <p id="hashResult"></p>
+
+    <script>
+        async function generateSHA512() {
+            const inputText = document.getElementById("inputText").value;
+            const encoder = new TextEncoder();
+            const data = encoder.encode(inputText);
+            const hashBuffer = await crypto.subtle.digest('SHA-512', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            const hashHex = hashArray.map(byte => byte.toString(16).padStart(2, '0')).join('');
+            document.getElementById("hashResult").innerHTML = "SHA-512 哈希值: " + hashHex;
+        }
+    </script>
+    <br><br><p>________________________________________________</p>
+    <p>© dxxblog.cn</p>
+    <p>可以把源码下载到本地使用，更安全</p>
+</body>
+</html>
