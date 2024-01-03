@@ -3,12 +3,12 @@
 
 
 # hash-generator
-一个生成 SHA512 哈希值的 html 小工具
+一个用于生成 SHA512 哈希值的 html 小工具
 
 
 
 # 在线使用
-https://public.dxxblog.cn/tools/hash
+https://www.dxxblog.cn/tool/hash-generator/
 
 
 
